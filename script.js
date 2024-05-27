@@ -56,21 +56,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const product = { codigo, descripcion, marca, cantidad, precio, iva };
 
-        const existingProductIndex = products.findIndex(p => p.codigo === codigo);
+        const existingProductIndex = editingProductCodigo ? products.findIndex(p => p.codigo === editingProductCodigo) : -1;
         if (existingProductIndex >= 0) {
             products[existingProductIndex] = product;
         } else {
             products.push(product);
         }
-
+    
+        editingProductCodigo = null;
+    
         localStorage.setItem('products', JSON.stringify(products));
         renderProducts();
         form.reset();
     });
 
+    let editingProductCodigo = null;
     window.editProduct = (codigo) => {
         const product = products.find(p => p.codigo === codigo);
         if (product) {
+            editingProductCodigo = product.codigo;
+          
             document.getElementById('codigo').value = product.codigo;
             document.getElementById('descripcion').value = product.descripcion;
             document.getElementById('marca').value = product.marca;
@@ -78,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('precio').value = product.precio;
             document.getElementById('iva').value = product.iva;
         }
+        console.log(editingProductCodigo);
     };
 
     window.deleteProduct = (codigo) => {
