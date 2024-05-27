@@ -55,3 +55,23 @@
 .iva-21 {
     background-color: #fff3cd; /* Naranja claro */
 }
+
+
+@media screen and (max-width: 600px) {
+    .table {
+        display: block;
+        width: 100%;
+    }
+    .table thead {
+        display: none;
+    }
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    .table tr {
+        margin-bottom: 15px;
+    }
+    
+    
+}
