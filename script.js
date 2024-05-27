@@ -1,5 +1,5 @@
 // script.js
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function ()  {
     const form = document.getElementById('productForm');
     const productTable = document.getElementById('productTable').getElementsByTagName('tbody')[0];
     const totalStock = document.getElementById('totalStock');
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return subtotal;
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function (e)  {
         e.preventDefault();
 
         const codigo = document.getElementById('codigo').value.trim();
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const product = { codigo, descripcion, marca, cantidad, precio, iva };
 
-        const existingProductIndex = editingProductCodigo ? products.findIndex(p => p.codigo === editingProductCodigo) : -1;
+        const existingProductIndex = editingProductCodigo ? products.findIndex(function(p) { return p.codigo === editingProductCodigo; }) : -1;
         if (existingProductIndex >= 0) {
             products[existingProductIndex] = product;
         } else {
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let editingProductCodigo = null;
-    window.editProduct = (codigo) => {
-        const product = products.find(p => p.codigo === codigo);
+    window.editProduct = function (codigo)  {
+        const product = products.find(function(p) { return p.codigo === codigo; });
         if (product) {
             editingProductCodigo = product.codigo;
           
@@ -86,8 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(editingProductCodigo);
     };
 
-    window.deleteProduct = (codigo) => {
-        products = products.filter(p => p.codigo !== codigo);
+    window.deleteProduct = function (codigo) {
+        products = products.filter(function(p) { return p.codigo !== codigo; });
         localStorage.setItem('products', JSON.stringify(products));
         renderProducts();
     };
