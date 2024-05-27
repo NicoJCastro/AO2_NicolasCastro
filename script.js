@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function ()  {
         const precio = parseFloat(document.getElementById('precio').value.trim());
         const iva = parseInt(document.getElementById('iva').value.trim());
 
-        if (codigo.length < 3 || descripcion.length < 3) {
+        if (codigo.length < 3 || descripcion.length < 3 || marca.length < 3) {
             alert('Código y Descripción deben tener al menos tres caracteres.');
             return;
-        }
+        }        
 
         const product = { codigo, descripcion, marca, cantidad, precio, iva };
 
