@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function ()  {
     const form = document.getElementById('productForm');
     const productTable = document.getElementById('productTable').getElementsByTagName('tbody')[0];

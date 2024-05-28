@@ -55,11 +55,11 @@ html {
 }
 
 .iva-10 {
-    background-color: #d4edda; /* Verde claro */
+    background-color: var(--bs-blue); 
 }
 
 .iva-21 {
-    background-color: #fff3cd; /* Naranja claro */
+    background-color: var(--bs-info); 
 }
 
 
