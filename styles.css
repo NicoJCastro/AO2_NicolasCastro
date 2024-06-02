@@ -62,7 +62,7 @@ html {
     background-color: var(--bs-info); 
 }
 
-
+/* ALTERNATIVA AL table-responsive de boostrap */
 /* @media screen and (max-width: 600px) {
     .table {
         display: block;
