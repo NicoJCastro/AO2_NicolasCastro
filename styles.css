@@ -63,7 +63,7 @@ html {
 }
 
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .table {
         display: block;
         width: 100%;
@@ -80,4 +80,4 @@ html {
     }
     
     
-}
+} */
